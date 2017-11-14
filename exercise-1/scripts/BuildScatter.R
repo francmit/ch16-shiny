@@ -12,7 +12,7 @@ library(ggplot2)
 
 BuildScatter <- function(dat, x, y, color, title="Title", xlab="X Title", ylab="Y Title") {
   scatter <- ggplot(dat) + 
-    geom_point(mapping = aes(x = x, y = y, color = color)) + 
+    geom_point(mapping = aes(x = dat[,x], y = dat[,y], color = color)) + 
     labs(title = title, x = xlab, y = ylab)
   return (scatter)
 }
